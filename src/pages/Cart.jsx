@@ -13,9 +13,9 @@ const Cart = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12 py-5 bg-light text-center">
-            <h4 className="p-3 display-5">Your Cart is Empty</h4>
+            <h4 className="p-3 display-5">Cosul dumneavoastra de cumparaturi este gol!</h4>
             <Link to="/" className="btn  btn-outline-dark mx-4">
-              <i className="fa fa-arrow-left"></i> Continue Shopping
+              <i className="fa fa-arrow-left"></i> Continuati cumparaturile!
             </Link>
           </div>
         </div>
@@ -49,7 +49,7 @@ const Cart = () => {
               <div className="col-md-8">
                 <div className="card mb-4">
                   <div className="card-header py-3">
-                    <h5 className="mb-0">Item List</h5>
+                    <h5 className="mb-0">Lista de produse</h5>
                   </div>
                   <div className="card-body">
                     {state.map((item) => {
@@ -108,7 +108,7 @@ const Cart = () => {
                               <p className="text-start text-md-center">
                                 <strong>
                                   <span className="text-muted">{item.qty}</span>{" "}
-                                  x ${item.price}
+                                  x {item.price} RON
                                 </strong>
                               </p>
                             </div>
@@ -124,23 +124,23 @@ const Cart = () => {
               <div className="col-md-4">
                 <div className="card mb-4">
                   <div className="card-header py-3 bg-light">
-                    <h5 className="mb-0">Order Summary</h5>
+                    <h5 className="mb-0">Rezumatul comenzii</h5>
                   </div>
                   <div className="card-body">
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                        Products ({totalItems})<span>${Math.round(subtotal)}</span>
+                        Cost produse ({totalItems})<span>{Math.round(subtotal)} RON</span>
                       </li>
                       <li className="list-group-item d-flex justify-content-between align-items-center px-0">
-                        Shipping
-                        <span>${shipping}</span>
+                        Cost livrare
+                        <span>{shipping} RON</span>
                       </li>
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                         <div>
-                          <strong>Total amount</strong>
+                          <strong>Total de plata</strong>
                         </div>
                         <span>
-                          <strong>${Math.round(subtotal + shipping)}</strong>
+                          <strong>{Math.round(subtotal + shipping)} RON</strong>
                         </span>
                       </li>
                     </ul>
@@ -149,7 +149,7 @@ const Cart = () => {
                       to="/checkout"
                       className="btn btn-dark btn-lg btn-block"
                     >
-                      Go to checkout
+                      Mergeti catre plata!
                     </Link>
                   </div>
                 </div>
@@ -169,7 +169,6 @@ const Cart = () => {
         <hr />
         {state.length > 0 ? <ShowCart /> : <EmptyCart />}
       </div>
-      <Footer />
     </>
   );
 };

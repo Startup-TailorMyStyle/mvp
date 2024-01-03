@@ -82,16 +82,16 @@ const Product = () => {
                 {product.rating && product.rating.rate}{" "}
                 <i className="fa fa-star"></i>
               </p>
-              <h3 className="display-6  my-4">${product.price}</h3>
+              <h3 className="display-6  my-4">{product.price} RON</h3>
               <p className="lead">{product.description}</p>
               <button
-                className="btn btn-outline-dark"
+                className="btn btn-success btn-lg"
                 onClick={() => addProduct(product)}
               >
-                Add to Cart
+                Adauga in cos
               </button>
-              <Link to="/cart" className="btn btn-dark mx-3">
-                Go to Cart
+              <Link to="/cart" className="btn btn-secondary btn-lg mx-3">
+                Catre cosul de cumparaturi
               </Link>
             </div>
           </div>
@@ -126,11 +126,11 @@ const Product = () => {
   const ShowSimilarProduct = () => {
     return (
       <>
-        <div className="py-4 my-4">
+        <div className="">
           <div className="d-flex">
             {similarProducts.map((item) => {
               return (
-                <div key={item.id} className="card mx-4 text-center">
+                <div key={item.id} className="card mx-3 text-center">
                   <img
                     className="card-img-top p-3"
                     src={item.image}
@@ -149,15 +149,15 @@ const Product = () => {
                   <div className="card-body">
                     <Link
                       to={"/product/" + item.id}
-                      className="btn btn-dark m-1"
+                      className="btn btn-secondary m-1"
                     >
-                      Buy Now
+                      Vizualizeaza
                     </Link>
                     <button
-                      className="btn btn-dark m-1"
+                      className="btn btn-success m-1"
                       onClick={() => addProduct(item)}
                     >
-                      Add to Cart
+                      Adauga in cos
                     </button>
                   </div>
                 </div>
@@ -175,7 +175,7 @@ const Product = () => {
         <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
         <div className="row my-5 py-5">
           <div className="d-none d-md-block">
-          <h2 className="">You may also Like</h2>
+          <h2 className="">Ar putea sa va placa</h2>
             <Marquee
               pauseOnHover={true}
               pauseOnClick={true}
@@ -186,7 +186,6 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
