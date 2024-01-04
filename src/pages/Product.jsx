@@ -70,9 +70,7 @@ const Product = () => {
 
   const handleAddToCart = () => {
     dispatch(addCart(modalProductRef.current))
-    console.log("Produs adăugat în coș");
     setShowModal(false);
-    alert("Produsul a fost adăugat în coș cu succes!");
   };
 
   const ShowProduct = () => {
@@ -101,9 +99,6 @@ const Product = () => {
               <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
                 Adauga in cos
               </button>
-              <Link to="/cart" className="btn btn-warning btn-lg mx-3">
-                Catre cosul de cumparaturi
-              </Link>
             </div>
           </div>
         </div>
@@ -111,88 +106,11 @@ const Product = () => {
     );
   };
 
-  const Loading2 = () => {
-    return (
-      <>
-        <div className="my-4 py-4">
-          <div className="d-flex">
-            <div className="mx-4">
-              <Skeleton height={400} width={250} />
-            </div>
-            <div className="mx-4">
-              <Skeleton height={400} width={250} />
-            </div>
-            <div className="mx-4">
-              <Skeleton height={400} width={250} />
-            </div>
-            <div className="mx-4">
-              <Skeleton height={400} width={250} />
-            </div>
-          </div>
-        </div>
-      </>
-    );
-  };
-
-  const ShowSimilarProduct = () => {
-    return (
-      <>
-        <div className="">
-          <div className="d-flex">
-            {similarProducts.map((item) => {
-              return (
-                <div key={item.id} className="card mx-3 text-center">
-                  <img
-                    className="card-img-top p-3"
-                    src={item.image}
-                    alt="Card"
-                    height={300}
-                    width={300}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      {item.title.substring(0, 15)}...
-                    </h5>
-                  </div>
-                  {/* <ul className="list-group list-group-flush">
-                    <li className="list-group-item lead">${product.price}</li>
-                  </ul> */}
-                  <div className="card-body">
-                    <Link
-                      to={"/product/" + item.id}
-                      className="btn btn-danger btn-lg"
-                    >
-                      Vizualizeaza
-                    </Link>
-                    <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
-                      Adauga in cos
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </>
-    );
-  };
   return (
     <>
       <Navbar />
       <div className="container">
         <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
-        <div className="row my-5 py-5">
-          <div className="d-none d-md-block">
-          <h2 className="">Ar putea sa va placa</h2>
-            <Marquee
-              pauseOnHover={true}
-              pauseOnClick={true}
-              speed={50}
-            >
-              {loading2 ? <Loading2 /> : <ShowSimilarProduct />}
-            </Marquee>
-          </div>
-        </div>
         {showModal && <Modal onClose={handleModalClose} onAddToCart={handleAddToCart}  />}
       </div>
     </>
