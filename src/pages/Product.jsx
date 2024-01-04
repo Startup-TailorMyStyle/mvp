@@ -90,9 +90,6 @@ const Product = () => {
               >
                 Adauga in cos
               </button>
-              <Link to="/cart" className="btn btn-secondary btn-lg mx-3">
-                Catre cosul de cumparaturi
-              </Link>
             </div>
           </div>
         </div>
