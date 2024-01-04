@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import { Modal } from "../components";  // Importați noul pop-up
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -11,12 +12,15 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const modalProductRef = useRef(null);
   let componentMounted = true;
 
   const dispatch = useDispatch();
 
-  const addProduct = (product) => {
-    dispatch(addCart(product))
+  const openAddProductModal = (product) => {
+    modalProductRef.current = product;
+    setShowModal(true); // Deschide modalul după adăugarea în coș
   }
 
   useEffect(() => {
@@ -69,6 +73,18 @@ const Products = () => {
     const updatedList = data.filter((item) => item.category === cat);
     setFilter(updatedList);
   }
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addCart(modalProductRef.current))
+    console.log("Produs adăugat în coș");
+    setShowModal(false);
+    alert("Produsul a fost adăugat în coș cu succes!");
+  };
+
   const ShowProducts = () => {
     return (
       <>
@@ -105,10 +121,10 @@ const Products = () => {
                     <li className="list-group-item">Vestibulum at eros</li> */}
                 </ul>
                 <div className="card-body">
-                  <Link to={"/product/" + product.id} className="btn btn-secondary btn-lg m-1">
+                  <Link to={"/product/" + product.id} className="btn btn-danger btn-lg m-1">
                     Vizualizeaza
                   </Link>
-                  <button className="btn btn-success btn-lg m-1" onClick={() => addProduct(product)}>
+                  <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
                     Adauga in cos
                   </button>
                 </div>
@@ -132,6 +148,7 @@ const Products = () => {
         <div className="row justify-content-center">
           {loading ? <Loading /> : <ShowProducts />}
         </div>
+        {showModal && <Modal onClose={handleModalClose} onAddToCart={handleAddToCart}  />}
       </div>
     </>
   );

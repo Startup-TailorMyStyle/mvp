@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Navbar } from "../components";
+import {  Navbar } from "../components";
 import { useSelector, useDispatch } from "react-redux";
 import { addCart, delCart } from "../redux/action";
 import { Link } from "react-router-dom";
@@ -29,6 +29,11 @@ const Cart = () => {
   const removeItem = (product) => {
     dispatch(delCart(product));
   };
+
+  const handleGoToPay = () => {
+      alert("Multumim pentru interesul dumneavoastra! Momentan site-ul nostru este in dezvoltare."+
+       "Vom reveni noi catre dumneavoastra in cel mai scurt timp. Va multumim pentru intelgere si va mai asteptam!")
+  }
 
   const ShowCart = () => {
     let subtotal = 0;
@@ -145,12 +150,12 @@ const Cart = () => {
                       </li>
                     </ul>
 
-                    <Link
-                      to="/checkout"
+                    <button
+                    onClick={() => handleGoToPay()}
                       className="btn btn-dark btn-lg btn-block"
                     >
                       Mergeti catre plata!
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

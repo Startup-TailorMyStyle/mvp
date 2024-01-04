@@ -1,0 +1,36 @@
+/* styles/Home.css */
+
+.hero {
+    border: 1px solid #000;
+    padding-bottom: 3px;
+  }
+  
+  .card {
+    background-color: #343a40;
+    color: #fff;
+    border: 0;
+    margin: 0 3px;
+  }
+  
+  .card-img {
+    object-fit: cover;
+  }
+  
+  .card-img-overlay {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .btn-success {
+    font-size: 1.5em;
+  }

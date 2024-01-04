@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Link, useParams } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import { Modal } from "../components";  // Importați noul pop-up
 
 import { Footer, Navbar } from "../components";
 
@@ -13,12 +14,14 @@ const Product = () => {
   const [similarProducts, setSimilarProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
-
+  const [showModal, setShowModal] = useState(false);
+  const modalProductRef = useRef(null);
   const dispatch = useDispatch();
 
-  const addProduct = (product) => {
-    dispatch(addCart(product));
-  };
+  const openAddProductModal = (product) => {
+    modalProductRef.current = product;
+    setShowModal(true); // Deschide modalul după adăugarea în coș
+  }
 
   useEffect(() => {
     const getProduct = async () => {
@@ -61,6 +64,17 @@ const Product = () => {
     );
   };
 
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addCart(modalProductRef.current))
+    console.log("Produs adăugat în coș");
+    setShowModal(false);
+    alert("Produsul a fost adăugat în coș cu succes!");
+  };
+
   const ShowProduct = () => {
     return (
       <>
@@ -84,13 +98,10 @@ const Product = () => {
               </p>
               <h3 className="display-6  my-4">{product.price} RON</h3>
               <p className="lead">{product.description}</p>
-              <button
-                className="btn btn-success btn-lg"
-                onClick={() => addProduct(product)}
-              >
+              <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
                 Adauga in cos
               </button>
-              <Link to="/cart" className="btn btn-secondary btn-lg mx-3">
+              <Link to="/cart" className="btn btn-warning btn-lg mx-3">
                 Catre cosul de cumparaturi
               </Link>
             </div>
@@ -149,14 +160,11 @@ const Product = () => {
                   <div className="card-body">
                     <Link
                       to={"/product/" + item.id}
-                      className="btn btn-secondary m-1"
+                      className="btn btn-danger btn-lg"
                     >
                       Vizualizeaza
                     </Link>
-                    <button
-                      className="btn btn-success m-1"
-                      onClick={() => addProduct(item)}
-                    >
+                    <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
                       Adauga in cos
                     </button>
                   </div>
@@ -185,6 +193,7 @@ const Product = () => {
             </Marquee>
           </div>
         </div>
+        {showModal && <Modal onClose={handleModalClose} onAddToCart={handleAddToCart}  />}
       </div>
     </>
   );
