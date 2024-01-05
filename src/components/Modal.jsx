@@ -2,6 +2,7 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import './Modal.css';
+import MovieClip from './MovieClip';
 
 const Modal = ({ onClose, onAddToCart }) => {
   const { register, handleSubmit, control, formState: { errors } } = useForm();
@@ -19,17 +20,33 @@ const Modal = ({ onClose, onAddToCart }) => {
           <div className='form-container'>
             <form onSubmit={handleSubmit(onSubmit)}>
             <label>
-                Inaltime:
+                Umeri:
                 <br />
                 <Controller
-                  name="inaltime"
+                  name="umeri"
                   control={control}
                   defaultValue=""
                   rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
                       <input {...field} placeholder="Introdu măsurătorile" />
-                      <span className="validation-message">{errors.inaltime?.message}</span>
+                      <span className="validation-message">{errors.umeri?.message}</span>
+                    </>
+                  )}
+                />
+              </label>
+            <label>
+                Lungime Fata:
+                <br />
+                <Controller
+                  name="lungime_fata"
+                  control={control}
+                  defaultValue=""
+                  rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
+                  render={({ field }) => (
+                    <>
+                      <input {...field} placeholder="Introdu măsurătorile" />
+                      <span className="validation-message">{errors.lungime_fata?.message}</span>
                     </>
                   )}
                 />
@@ -67,17 +84,33 @@ const Modal = ({ onClose, onAddToCart }) => {
                 />
               </label>
               <label>
-                Șolduri:
+                Lungime Maneci:
                 <br />
                 <Controller
-                  name="solduri"
+                  name="lungime_maneci"
                   control={control}
                   defaultValue=""
                   rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
                       <input {...field} placeholder="Introdu măsurătorile" />
-                      <span className="validation-message">{errors.solduri?.message}</span>
+                      <span className="validation-message">{errors.lungime_maneci?.message}</span>
+                    </>
+                  )}
+                />
+              </label>
+              <label>
+                Diametru Brat:
+                <br />
+                <Controller
+                  name="diametru_brat"
+                  control={control}
+                  defaultValue=""
+                  rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
+                  render={({ field }) => (
+                    <>
+                      <input {...field} placeholder="Introdu măsurătorile" />
+                      <span className="validation-message">{errors.diametru_brat?.message}</span>
                     </>
                   )}
                 />
@@ -92,10 +125,10 @@ const Modal = ({ onClose, onAddToCart }) => {
             />
           </div>
         </div>
-        <p>Pentru instrucțiuni despre cum vă puteți lua măsurătorile, puteți urmări acest <a href="https://www.youtube.com/watch?v=XAmy645yKuc" target="_blank">tutorial</a>.</p>
-        <div className="buttons-div">
-                <button className="btn btn-success btn-lg m-1" type="submit" onClick={handleSubmit(onSubmit)}>Adaugă în coș</button>
-                <button className="btn btn-secondary btn-lg m-1" onClick={onClose}>Părăsește fereastra</button>
+        <MovieClip/>
+        <div className="buttons-div d-flex">
+                <button className="btn btn-success btn-lg m-1 p-2" type="submit" onClick={handleSubmit(onSubmit)}>Adaugă în coș</button>
+                <button className="btn btn-secondary btn-lg m-1 p-2" onClick={onClose}>Părăsește fereastra</button>
         </div>
       </div>
     </div>
