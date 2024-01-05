@@ -27,16 +27,28 @@ const Product = () => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const data = await response.json();
-      setProduct(data);
-      setLoading(false);
-      const response2 = await fetch(
-        `https://fakestoreapi.com/products/category/${data.category}`
-      );
-      const data2 = await response2.json();
-      setSimilarProducts(data2);
-      setLoading2(false);
+      //change api request to read local json
+      // const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      // const data = await response.json();
+      // setProduct(data);
+      // setLoading(false);
+
+      fetch("/products.json",
+                {
+                  headers : { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                  }
+                }
+                )
+                .then(function(response){
+                  return response.json();
+                })
+                .then(function(myJson) {
+                  console.log(myJson[id])
+                  setProduct(myJson[id])
+                  setLoading(false)
+              })
     };
     getProduct();
   }, [id]);
@@ -88,12 +100,7 @@ const Product = () => {
               />
             </div>
             <div className="col-md-6 col-md-6 py-5">
-              <h4 className="text-uppercase text-muted">{product.category}</h4>
               <h1 className="display-5">{product.title}</h1>
-              <p className="lead">
-                {product.rating && product.rating.rate}{" "}
-                <i className="fa fa-star"></i>
-              </p>
               <h3 className="display-6  my-4">{product.price} RON</h3>
               <p className="lead">{product.description}</p>
               <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>

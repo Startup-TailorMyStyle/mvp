@@ -92,10 +92,10 @@ const Modal = ({ onClose, onAddToCart }) => {
             />
           </div>
         </div>
-        <p>Pentru instrucțiuni despre cum să-ți iei măsurătorile, vezi <a href="https://www.youtube.com/watch?v=XAmy645yKuc" target="_blank">aici</a>.</p>
+        <p>Pentru instrucțiuni despre cum vă puteți lua măsurătorile, puteți urmări acest <a href="https://www.youtube.com/watch?v=XAmy645yKuc" target="_blank">tutorial</a>.</p>
         <div className="buttons-div">
-                <button type="submit" onClick={handleSubmit(onSubmit)}>Adaugă în coș</button>
-                <button onClick={onClose}>Părăsește fereastra</button>
+                <button className="btn btn-success btn-lg m-1" type="submit" onClick={handleSubmit(onSubmit)}>Adaugă în coș</button>
+                <button className="btn btn-secondary btn-lg m-1" onClick={onClose}>Părăsește fereastra</button>
         </div>
       </div>
     </div>

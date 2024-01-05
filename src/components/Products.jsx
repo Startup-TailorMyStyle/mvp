@@ -26,12 +26,33 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products/");
-      if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
-        setLoading(false);
-      }
+      //change api request to read local json
+
+      // const response = await fetch("https://fakestoreapi.com/products/");
+      // if (componentMounted) {
+      //   setData(await response.clone().json());
+      //   setFilter(await response.json());
+      //   setLoading(false);
+      // }
+
+      fetch("/products.json",
+                {
+                  headers : { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                  }
+                }
+                )
+                .then(function(response){
+                  return response.json();
+                })
+                .then(function(myJson) {
+                  setData(myJson)
+                  setFilter(myJson)
+                  setLoading(false)
+              })
+      setFilter(data);
+      setLoading(false);
 
       return () => {
         componentMounted = false;
