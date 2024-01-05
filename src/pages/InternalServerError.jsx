@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components";
 
-const PageNotFound = () => {
+const InternalServerError = () => {
   return (
     <>
       <Navbar />
@@ -10,7 +10,7 @@ const PageNotFound = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12 py-5 bg-light text-center">
-              <h4 className="p-3 display-5">404: Pagina nu exista</h4>
+              <h4 className="p-3 display-5">500: A aparut o problema! Ne scuzati de inconvenienta!</h4>
               <Link to="/" className="btn  btn-outline-dark mx-4">
                 <i className="fa fa-arrow-left"></i> Inapoi acasa
               </Link>
@@ -22,4 +22,4 @@ const PageNotFound = () => {
   );
 };
 
-export default PageNotFound;
+export default InternalServerError;
