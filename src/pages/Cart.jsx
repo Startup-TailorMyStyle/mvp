@@ -14,7 +14,7 @@ const Cart = () => {
         <div className="row">
           <div className="col-md-12 py-5 bg-light text-center">
             <h4 className="p-3 display-5">Cosul dumneavoastra de cumparaturi este gol!</h4>
-            <Link to="/" className="btn  btn-outline-dark mx-4">
+            <Link to="/mvp" className="btn  btn-outline-dark mx-4">
               <i className="fa fa-arrow-left"></i> Continuati cumparaturile!
             </Link>
           </div>
@@ -151,7 +151,7 @@ const Cart = () => {
                     </ul>
 
                     <Link
-                      to="/checkout"
+                      to="/mvp/checkout"
                       className="btn btn-dark btn-lg btn-block"
                     >
                       Checkout!

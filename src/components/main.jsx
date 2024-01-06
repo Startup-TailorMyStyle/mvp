@@ -6,16 +6,15 @@ const Home = () => {
   return (
     <>
       <div className="hero border-1 pb-3">
-        <div className="card shadow bg-dark text-white border-0 mx-3">
+        <div className="card shadow bg-dark text-white border-0">
           <img
             className="card-img img-fluid"
-            src="./assets/homeMain.png.jpg"
+            src={process.env.PUBLIC_URL + "/assets/homeMain.png.jpg"}
             alt="Card"
-            height={200}
           />
           <div className="card-img-overlay d-flex align-items-flex-start">
             <div className="container">
-              <h5 className="fw-bold display-2 text-center"
+              <h5 className="fw-bold display-4 text-center"
               >Precizie în modă, Potrivit perfect pentru tine!</h5>
             </div>
           </div>

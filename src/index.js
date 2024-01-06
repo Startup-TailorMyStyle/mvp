@@ -15,18 +15,18 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Products />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/mvp" element={<Home />} />
+        <Route path="/mvp/product" element={<Products />} />
+        <Route path="/mvp/product/:id" element={<Product />} />
+        <Route path="/mvp/about" element={<AboutPage />} />
+        <Route path="/mvp/contact" element={<ContactPage />} />
+        <Route path="/mvp/cart" element={<Cart />} />
+        <Route path="/mvp/login" element={<Login />} />
+        <Route path="/mvp/register" element={<Register />} />
+        <Route path="/mvp/checkout" element={<Checkout />} />
         <Route path="/err500" element={<InternalServerError />} />
         <Route path="*" element={<PageNotFound />} />
-        <Route path="/product/*" element={<PageNotFound />} />
+        <Route path="/mvp/product/*" element={<PageNotFound />} />
       </Routes>
     </Provider>
   </BrowserRouter>

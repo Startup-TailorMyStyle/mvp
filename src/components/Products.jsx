@@ -113,12 +113,11 @@ const Products = () => {
           return (
             <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
             <div className="card text-center h-100" key={product.id}>
-              <Link to={"/product/" + product.id} style={{ color: 'inherit', textDecoration: 'none' }}>
+              <Link to={"/mvp/product/" + product.id} style={{ color: 'inherit', textDecoration: 'none' }}>
               <img
                 className="card-img-top p-3"
-                src={product.image}
+                src={process.env.PUBLIC_URL + product.image}
                 alt="Card"
-                height={300}
               />
               <div className="card-body">
                 <h5 className="card-title">
