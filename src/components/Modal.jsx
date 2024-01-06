@@ -29,7 +29,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
-                      <input {...field} placeholder="Introdu măsurătorile" />
+                      <input {...field} placeholder="Introdu măsurătorile (cm)" />
                       <span className="validation-message">{errors.umeri?.message}</span>
                     </>
                   )}
@@ -45,7 +45,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
-                      <input {...field} placeholder="Introdu măsurătorile" />
+                      <input {...field} placeholder="Introdu măsurătorile (cm)" />
                       <span className="validation-message">{errors.lungime_fata?.message}</span>
                     </>
                   )}
@@ -61,7 +61,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
-                      <input {...field} placeholder="Introdu măsurătorile" />
+                      <input {...field} placeholder="Introdu măsurătorile (cm)" />
                       <span className="validation-message">{errors.bust?.message}</span>
                     </>
                   )}
@@ -77,7 +77,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
-                      <input {...field} placeholder="Introdu măsurătorile" />
+                      <input {...field} placeholder="Introdu măsurătorile (cm)" />
                       <span className="validation-message">{errors.talie?.message}</span>
                     </>
                   )}
@@ -93,7 +93,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
-                      <input {...field} placeholder="Introdu măsurătorile" />
+                      <input {...field} placeholder="Introdu măsurătorile (cm)" />
                       <span className="validation-message">{errors.lungime_maneci?.message}</span>
                     </>
                   )}
@@ -109,7 +109,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
-                      <input {...field} placeholder="Introdu măsurătorile" />
+                      <input {...field} placeholder="Introdu măsurătorile (cm)" />
                       <span className="validation-message">{errors.diametru_brat?.message}</span>
                     </>
                   )}
@@ -118,7 +118,10 @@ const Modal = ({ onClose, onAddToCart }) => {
             </form>
           </div>
           <div className="avatar-container">
+              <br></br>
+              <br></br>
             <img
+              style={{ width: 230, height: 230, marginLeft: 20 }}
               src={process.env.PUBLIC_URL +"/assets/TailorPopUpImage.jpg"}  // înlocuiește cu link-ul real către avatar
               alt="Avatar"
               className="avatar-img"
