@@ -1,0 +1,30 @@
+[
+    {
+        "id": 0,
+        "title": "Tricou Barbati", 
+        "description": "Tricou 100% bunbac, confectionat pe masurile dumneavoastra de catre croitori locali.",
+        "image": "/assets/male-tshirt.png",
+        "price": 59.90
+    },
+    {
+        "id": 1,
+        "title": "Tricou tip Polo Barbati", 
+        "description": "Tricou 100% bunbac, confectionat pe masurile dumneavoastra de catre croitori locali.",
+        "image": "/assets/male-polo.png",
+        "price": 109.90
+    },
+    {
+        "id": 2,
+        "title": "Tricou Femei", 
+        "description": "Tricou 100% bunbac, confectionat pe masurile dumneavoastra de catre croitori locali.",
+        "image": "/assets/female-tshirt.png",
+        "price": 59.90
+    },
+    {
+        "id": 3,
+        "title": "Tricou tip Polo Femei", 
+        "description": "Tricou 100% bunbac, confectionat pe masurile dumneavoastra de catre croitori locali.",
+        "image": "/assets/female-polo.png",
+        "price": 109.90
+    }
+]
