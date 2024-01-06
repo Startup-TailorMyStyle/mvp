@@ -2,12 +2,23 @@ import React from "react";
 import { Footer, Navbar } from "../components";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { useRef } from "react";
+
 const Checkout = () => {
   const state = useSelector((state) => state.handleCart);
   const navigate = useNavigate();
 
+  const fNameRef = useRef(null)
+  const lNameRef = useRef(null)
+  const emailRef = useRef(null)
+
   const navigateToErr = () => {
     //Identify users here!!!
+    global.analytics.identify({
+      first_name: fNameRef.current.value,
+      last_name: lNameRef.current.value,
+      email: emailRef.current.value
+    })
     navigate('/err500')
   }
 
@@ -80,10 +91,10 @@ const Checkout = () => {
                           Prenume
                         </label>
                         <input
+                          ref={fNameRef}
                           type="text"
                           className="form-control"
                           id="Prenume"
-                          placeholder=""
                           required
                         />
                         <div className="invalid-feedback">
@@ -96,10 +107,10 @@ const Checkout = () => {
                           Nume
                         </label>
                         <input
+                          ref={lNameRef}
                           type="text"
                           className="form-control"
                           id="Nume"
-                          placeholder=""
                           required
                         />
                         <div className="invalid-feedback">
@@ -112,10 +123,10 @@ const Checkout = () => {
                           Email
                         </label>
                         <input
+                          ref={emailRef}
                           type="email"
                           className="form-control"
                           id="email"
-                          placeholder="you@example.com"
                           required
                         />
                         <div className="invalid-feedback">
