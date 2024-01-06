@@ -35,7 +35,7 @@ const Products = () => {
       //   setLoading(false);
       // }
 
-      fetch("/products.json",
+      fetch(process.env.PUBLIC_URL + "/products.json",
                 {
                   headers : { 
                     'Content-Type': 'application/json',

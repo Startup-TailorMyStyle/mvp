@@ -119,7 +119,7 @@ const Modal = ({ onClose, onAddToCart }) => {
           </div>
           <div className="avatar-container">
             <img
-              src="../assets/TailorPopUpImage.jpg"  // înlocuiește cu link-ul real către avatar
+              src={process.env.PUBLIC_URL +"/assets/TailorPopUpImage.jpg"}  // înlocuiește cu link-ul real către avatar
               alt="Avatar"
               className="avatar-img"
             />
