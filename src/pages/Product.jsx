@@ -101,10 +101,11 @@ const Product = () => {
             </div>
             <div className="col-md-6 col-md-6 py-5">
               <h1 className="display-5">{product.title}</h1>
+              <h3 className="display-6  my-4 text-danger"><del>{Math.round((product.price + 20.00) * 100) / 100} RON</del></h3>
               <h3 className="display-6  my-4">{product.price} RON</h3>
               <p className="lead">{product.description}</p>
               <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
-                Adauga in cos
+                Adaugă în coș
               </button>
             </div>
           </div>

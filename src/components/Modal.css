@@ -15,6 +15,7 @@
 }
 
 .modal-content {
+  margin-top: 500px;
   background: #fff;
   padding: 30px;
   border-radius: 12px;

@@ -26,7 +26,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   name="umeri"
                   control={control}
                   defaultValue=""
-                  rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
+                  rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
                       <input {...field} placeholder="Introdu măsurătorile" />
@@ -36,13 +36,13 @@ const Modal = ({ onClose, onAddToCart }) => {
                 />
               </label>
             <label>
-                Lungime Fata:
+                Lungime Față:
                 <br />
                 <Controller
                   name="lungime_fata"
                   control={control}
                   defaultValue=""
-                  rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
+                  rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
                       <input {...field} placeholder="Introdu măsurătorile" />
@@ -58,7 +58,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   name="bust"
                   control={control}
                   defaultValue=""
-                  rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
+                  rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
                       <input {...field} placeholder="Introdu măsurătorile" />
@@ -74,7 +74,7 @@ const Modal = ({ onClose, onAddToCart }) => {
                   name="talie"
                   control={control}
                   defaultValue=""
-                  rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
+                  rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
                       <input {...field} placeholder="Introdu măsurătorile" />
@@ -84,13 +84,13 @@ const Modal = ({ onClose, onAddToCart }) => {
                 />
               </label>
               <label>
-                Lungime Maneci:
+                Lungime Mâneci:
                 <br />
                 <Controller
                   name="lungime_maneci"
                   control={control}
                   defaultValue=""
-                  rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
+                  rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
                       <input {...field} placeholder="Introdu măsurătorile" />
@@ -100,13 +100,13 @@ const Modal = ({ onClose, onAddToCart }) => {
                 />
               </label>
               <label>
-                Diametru Brat:
+                Diametru Braț:
                 <br />
                 <Controller
                   name="diametru_brat"
                   control={control}
                   defaultValue=""
-                  rules={{ required: 'Camp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
+                  rules={{ required: 'Câmp obligatoriu',pattern: { value: /^[0-9]+(\.[0-9]+)?$/, message: 'Introduceți doar numere' }}}
                   render={({ field }) => (
                     <>
                       <input {...field} placeholder="Introdu măsurătorile" />

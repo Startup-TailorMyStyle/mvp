@@ -28,7 +28,7 @@ const Checkout = () => {
 
   const ShowCheckout = () => {
     let subtotal = 0;
-    let shipping = 30.0;
+    let shipping = 0.0;
     let totalItems = 0;
     state.map((item) => {
       return (subtotal += item.price * item.qty);
@@ -49,18 +49,18 @@ const Checkout = () => {
                 <div className="card-body">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                      Cost produse ({totalItems})<span>{subtotal} RON</span>
+                      Cost produse ({totalItems})<span>{Math.round((subtotal) * 100) / 100} RON</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Cost livrare
-                      <span>{shipping} RON</span>
+                      <span className="text-success">{shipping} RON</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                       <div>
                         <strong>Total de plata</strong>
                       </div>
                       <span>
-                        <strong>{subtotal + shipping} RON</strong>
+                        <strong>{Math.round((subtotal + shipping) * 100) / 100} RON</strong>
                       </span>
                     </li>
                   </ul>
@@ -70,7 +70,7 @@ const Checkout = () => {
             <div className="col-md-7 col-lg-8">
               <div className="card mb-4">
                 <div className="card-header py-3">
-                  <h4 className="mb-0">Adresa Livrare</h4>
+                  <h4 className="mb-0">Adresă de Livrare</h4>
                 </div>
                 <div className="card-body">
                   <form className="needs-validation" onSubmit={navigateToErr}>
@@ -87,7 +87,7 @@ const Checkout = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Acest camp este obligatoriu.
+                          Acest câmp este obligatoriu.
                         </div>
                       </div>
 
@@ -103,7 +103,7 @@ const Checkout = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Acest camp este obligatoriu.
+                          Acest câmp este obligatoriu.
                         </div>
                       </div>
 
@@ -119,42 +119,42 @@ const Checkout = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Acest camp este obligatoriu.
+                          Acest câmp este obligatoriu.
                         </div>
                       </div>
 
                       <div className="col-12 my-1">
                         <label for="address" className="form-label">
-                          Adresa
+                          Adresă
                         </label>
                         <input
                           type="text"
                           className="form-control"
                           id="address"
-                          placeholder="Strada, Numar"
+                          placeholder="Strada, Numarul"
                           required
                         />
                         <div className="invalid-feedback">
-                          Acest camp este obligatoriu.
+                          Acest câmp este obligatoriu.
                         </div>
                       </div>
 
                       <div className="col-12">
                         <label for="address2" className="form-label">
-                          Adresa 2{" "}
-                          <span className="text-muted">(Optional)</span>
+                          Adresă 2{" "}
+                          <span className="text-muted">(Opțional)</span>
                         </label>
                         <input
                           type="text"
                           className="form-control"
                           id="address2"
-                          placeholder="Bloc, Apartament, ..."
+                          placeholder="Blocul, Apartamentul, ..."
                         />
                       </div>
 
                       <div className="col-md-5 my-1">
                         <label for="country" className="form-label">
-                          Tara
+                          Țara
                         </label>
                         <br />
                         <input
@@ -165,13 +165,13 @@ const Checkout = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Acest camp este obligatoriu.
+                          Acest câmp este obligatoriu.
                         </div>
                       </div>
 
                       <div className="col-md-4 my-1">
                         <label for="state" className="form-label">
-                          Oras
+                          Oraș
                         </label>
                         <br />
                         <input
@@ -182,13 +182,13 @@ const Checkout = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Acest camp este obligatoriu.
+                          Acest câmp este obligatoriu.
                         </div>
                       </div>
 
                       <div className="col-md-3 my-1">
                         <label for="state" className="form-label">
-                          Judet
+                          Județ
                         </label>
                         <br />
                         <input
@@ -199,13 +199,13 @@ const Checkout = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Acest camp este obligatoriu.
+                          Acest câmp este obligatoriu.
                         </div>
                       </div>
 
-                      <div className="col-md-2 my-1">
+                      <div className="col-md-3 my-1">
                         <label for="zip" className="form-label">
-                          Cod Postal
+                          Cod Poștal
                         </label>
                         <input
                           type="text"
@@ -215,7 +215,7 @@ const Checkout = () => {
                           required
                         />
                         <div className="invalid-feedback">
-                          Acest camp este obligatoriu.
+                          Acest câmp este obligatoriu.
                         </div>
                       </div>
                     </div>
@@ -226,7 +226,7 @@ const Checkout = () => {
                       className="w-100 btn btn-primary "
                       type="submit"
                     >
-                      Catre plata!
+                      Către plată!
                     </button>
                   </form>
                 </div>

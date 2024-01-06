@@ -121,13 +121,14 @@ const Products = () => {
               />
               <div className="card-body">
                 <h5 className="card-title">
-                  {product.title.substring(0, 12)}...
+                  {product.title}
                 </h5>
                 <p className="card-text">
-                  {product.description.substring(0, 90)}...
+                  {product.description}
                 </p>
               </div>
               <ul className="list-group list-group-flush">
+                <li className="list-group-item lead fw-bold text-danger"><del>{Math.round((product.price + 20.00) * 100) / 100} RON</del></li>
                 <li className="list-group-item lead fw-bold">{product.price} RON</li>
               </ul>
               </Link>
