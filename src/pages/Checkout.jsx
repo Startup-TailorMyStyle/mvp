@@ -81,7 +81,7 @@ const Checkout = () => {
             <div className="col-md-7 col-lg-8">
               <div className="card mb-4">
                 <div className="card-header py-3">
-                  <h4 className="mb-0">Adresă de Livrare</h4>
+                  <h4 className="mb-0">Contact</h4>
                 </div>
                 <div className="card-body">
                   <form className="needs-validation" onSubmit={navigateToErr}>
@@ -133,102 +133,6 @@ const Checkout = () => {
                           Acest câmp este obligatoriu.
                         </div>
                       </div>
-
-                      <div className="col-12 my-1">
-                        <label for="address" className="form-label">
-                          Adresă
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="address"
-                          placeholder="Strada, Numarul"
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Acest câmp este obligatoriu.
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <label for="address2" className="form-label">
-                          Adresă 2{" "}
-                          <span className="text-muted">(Opțional)</span>
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="address2"
-                          placeholder="Blocul, Apartamentul, ..."
-                        />
-                      </div>
-
-                      <div className="col-md-5 my-1">
-                        <label for="country" className="form-label">
-                          Țara
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="country"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Acest câmp este obligatoriu.
-                        </div>
-                      </div>
-
-                      <div className="col-md-4 my-1">
-                        <label for="state" className="form-label">
-                          Oraș
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="state"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Acest câmp este obligatoriu.
-                        </div>
-                      </div>
-
-                      <div className="col-md-3 my-1">
-                        <label for="state" className="form-label">
-                          Județ
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="state"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Acest câmp este obligatoriu.
-                        </div>
-                      </div>
-
-                      <div className="col-md-3 my-1">
-                        <label for="zip" className="form-label">
-                          Cod Poștal
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="zip"
-                          placeholder=""
-                          required
-                        />
-                        <div className="invalid-feedback">
-                          Acest câmp este obligatoriu.
-                        </div>
-                      </div>
                     </div>
 
                     <hr className="my-4" />
@@ -237,7 +141,7 @@ const Checkout = () => {
                       className="w-100 btn btn-primary "
                       type="submit"
                     >
-                      Către plată!
+                      Către livrare!
                     </button>
                   </form>
                 </div>
