@@ -26,5 +26,19 @@
         "description": "Tricou 100% din bumbac, confecționat pe măsurile dumneavoastră de către croitori locali.",
         "image": "/assets/female-polo.png",
         "price": 39.99
+    },
+    {
+        "id": 4,
+        "title": "Cămașă Femei", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/female-shirt.png",
+        "price": 75.99
+    },
+    {
+        "id": 5,
+        "title": "Cămașă Barbați", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/male-shirt.png",
+        "price": 75.99
     }
 ]
