@@ -40,5 +40,69 @@
         "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
         "image": "/assets/male-shirt.png",
         "price": 75.99
+    },
+    {
+        "id": 6,
+        "title": "Cămașă Femei", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/female-shirt-1.PNG",
+        "price": 75.99
+    },
+    {
+        "id": 7,
+        "title": "Cămașă Femei", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/female-shirt-2.PNG",
+        "price": 75.99
+    },
+    {
+        "id": 8,
+        "title": "Tricou Femei", 
+        "description": "Tricou 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/female-tshirt-1.PNG",
+        "price": 75.99
+    },
+    {
+        "id": 9,
+        "title": "Cămașă Barbați", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/male-shirt-1.png",
+        "price": 75.99
+    },
+    {
+        "id": 10,
+        "title": "Cămașă Barbați", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/male-shirt-2.png",
+        "price": 75.99
+    },
+    {
+        "id": 11,
+        "title": "Cămașă Barbați", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/male-shirt-3.png",
+        "price": 75.99
+    },
+    {
+        "id": 12,
+        "title": "Cămașă Barbați", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/male-shirt-4.PNG",
+        "price": 75.99
+    },
+    {
+        "id": 13,
+        "title": "Cămașă Barbați", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/male-shirt-5.PNG",
+        "price": 75.99
+    },
+    {
+        "id": 14,
+        "title": "Cămașă Barbați", 
+        "description": "Cămașă 100% din bumbac, confecționată pe măsurile dumneavoastră de către croitori locali.",
+        "image": "/assets/male-shirt-6.png",
+        "price": 75.99
     }
+    
 ]
