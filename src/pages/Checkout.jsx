@@ -3,8 +3,14 @@ import { Footer, Navbar } from "../components";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useRef } from "react";
+import { useEffect } from "react";
 
 const Checkout = () => {
+
+  useEffect(() => {
+    global.analytics.track("Checkout")
+  }, [])
+
   const state = useSelector((state) => state.handleCart);
   const navigate = useNavigate();
 

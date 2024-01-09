@@ -3,8 +3,14 @@ import {  Navbar } from "../components";
 import { useSelector, useDispatch } from "react-redux";
 import { addCart, delCart } from "../redux/action";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Cart = () => {
+
+  useEffect(() => {
+    global.analytics.track("Cart")
+  }, [])
+  
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
 

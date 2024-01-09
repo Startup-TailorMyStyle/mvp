@@ -3,8 +3,14 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import './Modal.css';
 import MovieClip from './MovieClip';
+import { useEffect } from 'react';
 
 const Modal = ({ onClose, onAddToCart }) => {
+
+  useEffect(() => {
+    global.analytics.track("Modal")
+  }, [])
+
   const { register, handleSubmit, control, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {

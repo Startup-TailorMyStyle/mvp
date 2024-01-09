@@ -18,6 +18,10 @@ const Product = () => {
   const modalProductRef = useRef(null);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    global.analytics.track("Product", {type: id})
+  }, [])
+
   const openAddProductModal = (product) => {
     modalProductRef.current = product;
     setShowModal(true); // Deschide modalul după adăugarea în coș
