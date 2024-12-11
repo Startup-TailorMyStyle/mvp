@@ -3,6 +3,7 @@ import {  Navbar } from "../components";
 import { useSelector, useDispatch } from "react-redux";
 import { addCart, delCart } from "../redux/action";
 import { Link } from "react-router-dom";
+import PaymentService from "../services/PaymentService";
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
@@ -30,9 +31,9 @@ const Cart = () => {
     dispatch(delCart(product));
   };
 
-  const handleGoToPay = () => {
-      alert("Multumim pentru interesul dumneavoastra! Momentan site-ul nostru este in dezvoltare."+
-       "Vom reveni noi catre dumneavoastra in cel mai scurt timp. Va multumim pentru intelgere si va mai asteptam!")
+  const handleGoToPay = async () => {
+    let shipping = 30.0;
+    await PaymentService.initiatePayment(state, shipping);
   }
 
   const ShowCart = () => {
