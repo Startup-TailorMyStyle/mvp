@@ -7,6 +7,7 @@ import PaymentService from "../services/PaymentService";
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
+  const measurements = useSelector((state) => state.handleMeasurements?.measurements);
   const dispatch = useDispatch();
 
   const EmptyCart = () => {
@@ -47,6 +48,7 @@ const Cart = () => {
     state.map((item) => {
       return (totalItems += item.qty);
     });
+
     return (
       <>
         <section className="h-100 gradient-custom">
@@ -81,8 +83,15 @@ const Cart = () => {
                               <p>
                                 <strong>{item.title}</strong>
                               </p>
-                              {/* <p>Color: blue</p>
-                              <p>Size: M</p> */}
+                              <div className="measurements-details text-muted">
+                                <small>
+                                  Măsurători: <br />
+                                  {measurements.hips_circumference}cm (hips) <br />
+                                  {measurements.bust_circumference}cm (bust) <br />
+                                  {measurements.waist_circumference}cm (waist) <br />
+                                  {measurements.biceps_circumference}cm (arms)
+                                </small>
+                              </div>
                             </div>
 
                             <div className="col-lg-4 col-md-6">

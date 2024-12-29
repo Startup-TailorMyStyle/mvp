@@ -13,3 +13,18 @@ export const delCart = (product) =>{
         payload:product
     }
 }
+
+// For Setting Measurements
+export const setMeasurements = (measurements) => {
+    return {
+        type: "SET_MEASUREMENTS",
+        payload: measurements
+    }
+}
+
+// For Clearing Measurements
+export const clearMeasurements = () => {
+    return {
+        type: "CLEAR_MEASUREMENTS"
+    }
+}
