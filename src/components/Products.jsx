@@ -26,7 +26,7 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("http://imageserver.local/products/");
+      const response = await fetch("http://localhost/products/");
       if (componentMounted) {
         setData(await response.clone().json());
         setFilter(await response.json());
