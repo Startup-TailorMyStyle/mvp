@@ -27,12 +27,12 @@ const Product = () => {
     const getProduct = async () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const response = await fetch(`http://localhost/products/${id}`);
       const data = await response.json();
       setProduct(data);
       setLoading(false);
       const response2 = await fetch(
-        `https://fakestoreapi.com/products/category/${data.category}`
+        `http://localhost/products/category/${data.category}`
       );
       const data2 = await response2.json();
       setSimilarProducts(data2);
