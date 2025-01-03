@@ -68,8 +68,8 @@ const Product = () => {
     setShowModal(false);
   };
 
-  const handleAddToCart = () => {
-    dispatch(addCart(modalProductRef.current))
+  const handleAddToCart = (product) => {
+    dispatch(addCart(product))
     console.log("Produs adăugat în coș");
     setShowModal(false);
     alert("Produsul a fost adăugat în coș cu succes!");
@@ -98,7 +98,7 @@ const Product = () => {
               </p>
               <h3 className="display-6  my-4">{product.price} RON</h3>
               <p className="lead">{product.description}</p>
-              <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
+              <button className="btn btn-success btn-lg m-1" onClick={() => handleAddToCart(product)}>
                 Adauga in cos
               </button>
               <Link to="/cart" className="btn btn-warning btn-lg mx-3">
@@ -164,7 +164,7 @@ const Product = () => {
                     >
                       Vizualizeaza
                     </Link>
-                    <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
+                    <button className="btn btn-success btn-lg m-1" onClick={() => handleAddToCart(item)}>
                       Adauga in cos
                     </button>
                   </div>

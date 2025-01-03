@@ -78,8 +78,8 @@ const Products = () => {
     setShowModal(false);
   };
 
-  const handleAddToCart = () => {
-    dispatch(addCart(modalProductRef.current))
+  const handleAddToCart = (product) => {
+    dispatch(addCart(product))
     console.log("Produs adăugat în coș");
     setShowModal(false);
     alert("Produsul a fost adăugat în coș cu succes!");
@@ -124,7 +124,7 @@ const Products = () => {
                   <Link to={"/product/" + product.id} className="btn btn-danger btn-lg m-1">
                     Vizualizeaza
                   </Link>
-                  <button className="btn btn-success btn-lg m-1" onClick={() => openAddProductModal(product)}>
+                  <button className="btn btn-success btn-lg m-1" onClick={() => handleAddToCart(product)}>
                     Adauga in cos
                   </button>
                 </div>
@@ -148,7 +148,6 @@ const Products = () => {
         <div className="row justify-content-center">
           {loading ? <Loading /> : <ShowProducts />}
         </div>
-        {showModal && <Modal onClose={handleModalClose} onAddToCart={handleAddToCart}  />}
       </div>
     </>
   );
